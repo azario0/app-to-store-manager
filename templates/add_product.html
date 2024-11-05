@@ -1,0 +1,25 @@
+<!-- templates/add_product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add New Product</h1>
+        <form method="POST" action="{{ url_for('add_product') }}" enctype="multipart/form-data">
+            <label for="name">Product Name</label>
+            <input type="text" name="name" required>
+
+            <label for="detail">Product Detail</label>
+            <textarea name="detail" required></textarea>
+
+            <label for="image">Upload Image</label>
+            <input type="file" name="image" accept="image/*" required>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+</body>
+</html>

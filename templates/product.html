@@ -1,0 +1,21 @@
+<!-- templates/product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.detail }}</p>
+            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+            <form method="POST">
+                <button type="submit" class="button">Buy</button>
+            </form>
+            <a href="{{ url_for('index') }}" class="button">Back to products</a>
+        </div>
+    </div>
+</body>
+</html>
